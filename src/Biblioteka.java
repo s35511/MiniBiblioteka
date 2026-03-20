@@ -17,6 +17,7 @@ public class Biblioteka {
         }
     }
     public void wypiszDostepneKsiazki(){
+        System.out.println("Dostepne Ksiazki:");
         for(int i=0;i<ksiazki.length;i++){
             if(ksiazki[i].isDostepna()){
                 ksiazki[i].wypiszinfo();
@@ -25,7 +26,7 @@ public class Biblioteka {
     }
     public Ksiazka znajdzKsiazkePoTytule(String tytul){
         for(int i=0;i<ksiazki.length;i++){
-            if(ksiazki[i].getTytul().equals(tytul)){
+            if(ksiazki[i].getTytul().equalsIgnoreCase(tytul)){
                 return ksiazki[i];
             }
         }
@@ -39,6 +40,31 @@ public class Biblioteka {
             }
         }
         System.out.println(liczbaDostepnychKsiazek);
+    }
+    public void wypozyczKsiazke(String tytul, Czytelnik czytelnik){
+        for(int i=0;i<ksiazki.length;i++){
+            if(ksiazki[i].getTytul().equalsIgnoreCase(tytul)){
+                if(ksiazki[i].isDostepna()) {
+                    ksiazki[i].wypozycz();
+                    czytelnik.zwiekszLiczbeWypozyczen(1);
+                } else{
+                    System.out.println("Ksiazka nie jest dostepna");
+                }
+                return;
+            }
+
+        }
+            System.out.println("Nie znaleziono ksiazki o danym tytule");
+    }
+    public void zwrocKsiazke(String tytul, Czytelnik czytelnik){
+        for(int i=0;i<ksiazki.length;i++){
+            if(ksiazki[i].getTytul().equalsIgnoreCase(tytul)){
+                ksiazki[i].zwroc();
+                czytelnik.zmniejszLiczbeWypozyczen(1);
+                return;
+            }
+        }
+        System.out.println("Nie znaleziono ksiazki o podanym tytule");
     }
     
 }

@@ -21,4 +21,8 @@ public class Czytelnik {
         System.out.println("Zmniejszenie liczby wypozyczonych ksiazek z "+liczbaWypozyczen+" do "+(liczbaWypozyczen-liczba));
         return liczbaWypozyczen-=liczba;
     }
+
+    public String getImie() {
+        return imie;
+    }
 }

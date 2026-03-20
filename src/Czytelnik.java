@@ -10,14 +10,14 @@ public class Czytelnik {
         this.numerKarty=numerKarty;
         this.liczbaWypozyczen=liczbaWypozyczen;
     }
-    void wypiszDane(){
+    public void wypiszDane(){
         System.out.println("Imie: "+imie+" Nazwisko: "+nazwisko+" Numer karty: "+numerKarty+" Liczba Wypozyczen: "+liczbaWypozyczen);
     }
-    int zwiekszLiczbeWypozyczen(int liczba){
+    public int zwiekszLiczbeWypozyczen(int liczba){
         System.out.println("Zwiekszenie wypozyczonych ksiazek z "+liczbaWypozyczen+" do "+(liczbaWypozyczen+liczba));
         return liczbaWypozyczen+=liczba;
     }
-    int zmniejszLiczbeWypozyczen(int liczba){
+    public int zmniejszLiczbeWypozyczen(int liczba){
         System.out.println("Zmniejszenie liczby wypozyczonych ksiazek z "+liczbaWypozyczen+" do "+(liczbaWypozyczen-liczba));
         return liczbaWypozyczen-=liczba;
     }

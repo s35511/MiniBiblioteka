@@ -21,6 +21,13 @@ public class Main {
         czytelnik2.wypiszDane();
         czytelnik2.zwiekszLiczbeWypozyczen(2);
         czytelnik2.zmniejszLiczbeWypozyczen(2);
+        Biblioteka biblioteka1 = new Biblioteka(3);
+        biblioteka1.dodajKsiazke(ksiazka1);
+        biblioteka1.dodajKsiazke(ksiazka2);
+        biblioteka1.dodajKsiazke(ksiazka3);
+        biblioteka1.wypiszDostepneKsiazki();
+        biblioteka1.znajdzKsiazkePoTytule("Abecadlo");
+        biblioteka1.policzDostepneKsiazki();
 
 
 

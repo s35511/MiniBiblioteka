@@ -12,21 +12,31 @@ public class Ksiazka {
     }
 
 
-    void wypiszinfo(){
+    public void wypiszinfo(){
         System.out.println("Tytuł: "+tytul+" Autor: "+autor+" Liczba stron: "+liczbaStron+" Dostepna: "+dostepna);
     }
-    boolean wypozycz(){
+    public boolean wypozycz(){
         if(dostepna){
+            dostepna=false;
             System.out.println("Mozna wypozyczyc ksiazke milego czytania.");
-            return dostepna=false;
+            return true;
         }
         else {
             System.out.println("Ksiazka jest juz wypozyczona.");
-            return dostepna=true;
+            return false;
         }
     }
-    boolean zwroc(){
+    public boolean zwroc(){
+        dostepna=true;
         System.out.println("Dziekujemy za zwrot ksiazki");
-        return dostepna=true;
+        return true;
+    }
+
+    public String getTytul() {
+        return tytul;
+    }
+
+    public boolean isDostepna() {
+        return dostepna;
     }
 }
